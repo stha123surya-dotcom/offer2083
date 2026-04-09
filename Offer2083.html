@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Year 2083 Offer | Build Your Dream Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#0f172a;
+  --accent:#f97316;
+  --soft:#f1f5f9;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#fff;color:#111}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.05);position:sticky;top:0;z-index:100}
+nav h2{color:var(--primary)}
+nav a{margin-left:20px;text-decoration:none;color:#333;font-weight:500}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:80px 20px;text-align:center}
+.hero h1{font-size:42px;margin-bottom:10px}
+.hero p{opacity:0.85}
+.btn{display:inline-block;margin-top:20px;padding:14px 28px;background:var(--accent);color:#fff;border-radius:40px;text-decoration:none;font-weight:600}
+
+/* SECTIONS */
+.section{padding:70px 20px;max-width:1200px;margin:auto}
+.section h2{text-align:center;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{background:#fff;padding:25px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,0.06);transition:.3s}
+.card:hover{transform:translateY(-5px)}
+
+.highlight{background:var(--accent);color:#fff;text-align:center;padding:40px;border-radius:20px}
+
+/* FORM */
+.form-box{background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #ccc}
+button{border:none;cursor:pointer}
+
+/* FOOTER */
+footer{text-align:center;padding:25px;background:var(--primary);color:#fff}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 6px 15px rgba(0,0,0,0.2)
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h2>Shape and Structure Builders</h2>
+<div>
+<a href="#offer">Offer</a>
+<a href="#why">Why Us</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>🎉 New Year 2083 Mega Offer</h1>
+<p>Design Your Dream, We Build Your Future</p>
+<a href="#contact" class="btn">Get Free Consultation</a>
+</section>
+
+<!-- OFFER -->
+<section class="section" id="offer">
+<h2>🔥 Offer Highlights</h2>
+<div class="grid">
+<div class="card"><h3>FREE Design</h3><p>Plan + 3D Elevation Included</p></div>
+<div class="card"><h3>10% Discount</h3><p>On Turnkey Construction</p></div>
+<div class="card"><h3>Free Site Visit</h3><p>Vaastu + Feasibility</p></div>
+<div class="card"><h3>Flexible Payment</h3><p>Easy Installments</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="highlight">
+<h2>🎁 First 10 Clients Bonus</h2>
+<p>Free Interior Layout OR Boundary Design</p>
+</div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why">
+<h2>💡 Why Choose Us</h2>
+<div class="grid">
+<div class="card">Complete Design + Build Solution</div>
+<div class="card">Transparent BOQ & Pricing</div>
+<div class="card">Premium Material Guarantee</div>
+<div class="card">Professional Team</div>
+</div>
+</section>
+
+<!-- Satisfied Customer -->
+<section class="section" id="why">
+<h2> Sataisfied Customer Count</h2>
+<div class="grid">
+<div class="card" style="text-align: center;"><h3>50+</h3> Building Turnkey Service</div>
+<div class="card" style="text-align: center;"><h3>100+</h3> Building Design Projects</div>
+<div class="card" style="text-align: center;"><h3>50+</h3> Interior and Renovation Projects</div>
+<div class="card" style="text-align: center;"><h3>20+</h3> Large Scale Projects(Hotels, Resorts, Factory etc)</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+<h2>📞 Book Now</h2>
+<div class="form-box">
+<form id="leadForm">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+<textarea id="message" placeholder="Project Details"></textarea>
+<button class="btn" type="submit">Submit</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2083 Shape and Structure builders Pvt. Ltd. | Build Smart This New Year</p>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/9779841737795" target="_blank">Chat Now</a>
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+<script>
+// 🔥 Replace with your Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyCLtpUXd_Ql22cIetZucKhTTywD1xyWyOE",
+  authDomain: "shape-contact.firebaseapp.com",
+  projectId: "shape-contact",
+  storageBucket: "shape-contact.firebasestorage.app",
+  messagingSenderId: "160817054329",
+  appId: "1:160817054329:web:faf48fe965e63cd6350aa8",
+  measurementId: "G-G1B7QRLBYJ"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// FORM SUBMIT
+const form = document.getElementById('leadForm');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  await db.collection('leads').add({
+    name, phone, message,
+    created: new Date()
+  });
+
+  alert('Thank you! We will contact you soon.');
+  form.reset();
+});
+</script>
+
+</body>
+</html>
