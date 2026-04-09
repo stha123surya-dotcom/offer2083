@@ -145,19 +145,15 @@ box-shadow:0 6px 15px rgba(0,0,0,0.2)
 <script>
 // 🔥 Replace with your Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyCLtpUXd_Ql22cIetZucKhTTywD1xyWyOE",
+  apiKey:  "AIzaSyCLtpUXd_Ql22cIetZucKhTTywD1xyWyOE",
   authDomain: "shape-contact.firebaseapp.com",
   projectId: "shape-contact",
-  storageBucket: "shape-contact.firebasestorage.app",
-  messagingSenderId: "160817054329",
-  appId: "1:160817054329:web:faf48fe965e63cd6350aa8",
-  measurementId: "G-G1B7QRLBYJ"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// FORM SUBMIT
+// FORM SUBMIT + AUTO WHATSAPP REDIRECT
 const form = document.getElementById('leadForm');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -166,13 +162,41 @@ form.addEventListener('submit', async (e) => {
   const phone = document.getElementById('phone').value;
   const message = document.getElementById('message').value;
 
+  // Save to Firebase
   await db.collection('leads').add({
     name, phone, message,
     created: new Date()
   });
 
-  alert('Thank you! We will contact you soon.');
-  form.reset();
+//FORM SUBMIT + AUTO WHATSAPP REDIRECT
+const form = document.getElementById('leadForm');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  // Save to Firebase
+  await db.collection('leads').add({
+    name, phone, message,
+    created: new Date()
+  });
+
+  // 📲 Auto WhatsApp Message
+  const yourNumber = "9779841737795"; // replace with your number
+  const text = `Hello, I am ${name}. I am interested in your New Year Offer.
+Phone: ${phone}
+Project Details: ${message}`;
+  const encodedText = encodeURIComponent(text);
+
+  const whatsappURL = "https://wa.me/${9779841737795?text=${Hello}";
+        window.open(whatsappURL,'_blank');
+
+      alert('Thank you! Redirecting to WhatsApp...');
+      form.reset();
+    //  Redirect to WhatsApp
+
 });
 </script>
 
